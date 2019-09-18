@@ -1,0 +1,11 @@
+language: bash
+
+services:
+  - docker
+
+before_script:
+  - docker build -t web3j-install-debian -f test/debian/Dockerfile .
+  - docker build -t web3j-install-fedora -f test/fedora/Dockerfile .
+
+script:
+  - docker run web3j-install-debian:latest && docker run web3j-install-fedora:latest
