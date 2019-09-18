@@ -88,4 +88,7 @@ main() {
     set_path
   fi
 }
+
+exit 1
+
 main
