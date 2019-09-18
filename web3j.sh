@@ -1,5 +1,5 @@
 #!/bin/bash
-web3j_version="4.5.0"
+web3j_version="4.5.2"
 installed_flag=0
 update_flag=0
 local=~/
@@ -45,7 +45,7 @@ check_version() {
 }
 
 get_user_input() {
-  while true do
+  while :; do
     echo
     read -p "Would you like to update Web3j ? [y]es | [n]o : " user_input
     case $user_input in
