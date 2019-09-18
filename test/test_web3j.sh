@@ -1,3 +1,4 @@
+#!/bin/bash
 JAVA_EXECUTABLE=$(readlink -f $(which java))
 export JAVA_HOME=$(dirname $(dirname $JAVA_EXECUTABLE))
 bash web3j.sh
