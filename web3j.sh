@@ -45,7 +45,7 @@ check_version() {
 }
 
 get_user_input() {
-  while ;; do
+  while true do
     echo
     read -p "Would you like to update Web3j ? [y]es | [n]o : " user_input
     case $user_input in
