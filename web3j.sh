@@ -89,6 +89,4 @@ main() {
   fi
 }
 
-exit 1
-
 main
