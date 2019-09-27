@@ -29,7 +29,7 @@ set_path() {
 download_web3j() {
   echo "Downloading Web3j ..."
   mkdir "${local}.web3j"
-  wget -P "${local}.web3j" "https://github.com/web3j/web3j/releases/download/v${web3j_version}/web3j-${web3j_version}.zip" -q
+  wget -P "${local}.web3j" "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip" -q
   unzip -o "${local}.web3j/web3j-${web3j_version}.zip" -d "${local}.web3j"
   rm "${local}.web3j/web3j-${web3j_version}.zip"
 }
