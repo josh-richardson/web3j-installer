@@ -35,7 +35,9 @@ download_web3j() {
 }
 
 check_version() {
-  if ! (web3j version | grep $web3j_version) &>/dev/null; then
+  version_string=`web3j version | grep Version | awk -F" "  '{print $NF}'`
+  echo $version_string
+  if [[ $version_string < $web3j_version ]] ; then
     echo "Your Web3j version is not up to date."
     get_user_input
   else
