@@ -29,9 +29,15 @@ set_path() {
 download_web3j() {
   echo "Downloading Web3j ..."
   mkdir "${local}.web3j"
-  wget -P "${local}.web3j" "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip" -q
-  unzip -o "${local}.web3j/web3j-${web3j_version}.zip" -d "${local}.web3j"
-  rm "${local}.web3j/web3j-${web3j_version}.zip"
+ if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip") -eq 302 ]] ; then
+    curl -# -L -o ~/.web3j/web3j-${web3j_version}.zip "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip"
+    unzip  -o "${local}.web3j/web3j-${web3j_version}.zip" -d "${local}.web3j"
+    rm "${local}.web3j/web3j-${web3j_version}.zip"
+ else
+  echo "Looks like there was an error while trying to get web3j"
+  
+  exit 0
+ fi
 }
 
 check_version() {
@@ -72,8 +78,10 @@ check_if_web3j_homebrew() {
 }
 
 clean_up() {
+  if [ -d "${local}.web3j" ] ; then
   rm -r "${local}.web3j" &>/dev/null
-  echo "Cleaning up old stuff ..."
+  echo "Deleting older installation ..."
+  fi
 }
 
 main() {
