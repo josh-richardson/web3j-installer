@@ -1,5 +1,5 @@
 #!/bin/bash
-web3j_version="4.5.4"
+web3j_version="4.5.5"
 installed_flag=0
 update_flag=0
 local=~/
