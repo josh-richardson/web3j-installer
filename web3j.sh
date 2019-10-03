@@ -11,7 +11,7 @@ check_if_installed() {
   fi
 }
 
-completed(){
+completed() {
   echo "To start using the CLI type web3j"
   web3j 
 }
@@ -40,12 +40,10 @@ set_path() {
      echo "Web3j path exists in zshrc"
   fi
   
-  if  [[ $(basename $SHELL) = 'zsh' ]] ; then 
-    zsh
-  fi
-   if  [[ $(basename $SHELL) = 'bash' ]] ; then 
-    bash
-  fi
+  {
+  echo "export PATH=$PATH:~/.web3j/web3j-${web3j_version}/bin"
+  } > ~/.web3j/source.sh
+  source ~/.web3j/source.sh
 
    
 }
