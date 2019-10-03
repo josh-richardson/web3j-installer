@@ -41,7 +41,7 @@ set_path() {
   fi
   
   {
-  echo "export PATH=$PATH:~/.web3j/web3j-${web3j_version}/bin"
+  echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin"
   } > ~/.web3j/source.sh
   source ~/.web3j/source.sh
 
