@@ -1,0 +1,166 @@
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;rm -r ~/.web3j]1;rm]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;./web3j.sh]1;./web3j.shDownloading Web3j ...
+Archive:  /home/alexander/.web3j/web3j-4.5.5.zip
+   creating: /home/alexander/.web3j/web3j-4.5.5/
+   creating: /home/alexander/.web3j/web3j-4.5.5/lib/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/web3j-cli-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/codegen-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/contracts-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/hosted-providers-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/core-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/crypto-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-nop-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/javapoet-1.7.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/picocli-3.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/abi-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/tuples-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-unixsocket-0.21.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/logging-interceptor-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okhttp-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rxjava-2.2.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/Java-WebSocket-1.3.8.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-databind-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-api-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rlp-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/utils-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-enxio-0.19.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-posix-3.0.47.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-ffi-2.1.9.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-constants-0.9.11.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okio-1.13.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/reactive-streams-1.0.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-annotations-2.8.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-core-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/bcprov-jdk15on-1.61.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17-native.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-commons-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-analysis-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-util-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-tree-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-a64asm-1.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-x86asm-1.0.2.jar  
+   creating: /home/alexander/.web3j/web3j-4.5.5/bin/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j.bat  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j  
+Removing zip file ...
+Web3j path exists in bash_profile
+Web3j path exists in bashrc
+Web3j path exists in zshrc
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;rm -r ~/.web3j]1;rm]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;./web3j.sh]1;./web3j.shDownloading Web3j ...
+Archive:  /home/alexander/.web3j/web3j-4.5.5.zip
+   creating: /home/alexander/.web3j/web3j-4.5.5/
+   creating: /home/alexander/.web3j/web3j-4.5.5/lib/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/web3j-cli-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/codegen-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/contracts-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/hosted-providers-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/core-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/crypto-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-nop-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/javapoet-1.7.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/picocli-3.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/abi-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/tuples-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-unixsocket-0.21.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/logging-interceptor-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okhttp-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rxjava-2.2.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/Java-WebSocket-1.3.8.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-databind-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-api-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rlp-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/utils-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-enxio-0.19.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-posix-3.0.47.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-ffi-2.1.9.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-constants-0.9.11.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okio-1.13.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/reactive-streams-1.0.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-annotations-2.8.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-core-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/bcprov-jdk15on-1.61.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17-native.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-commons-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-analysis-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-util-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-tree-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-a64asm-1.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-x86asm-1.0.2.jar  
+   creating: /home/alexander/.web3j/web3j-4.5.5/bin/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j.bat  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j  
+Removing zip file ...
+Web3j path exists in bash_profile
+Web3j path exists in bashrc
+Web3j path exists in zshrc
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;web3j]1;web3j
+              _      _____ _     _        
+             | |    |____ (_)   (_)       
+__      _____| |__      / /_     _   ___  
+\ \ /\ / / _ \ '_ \     \ \ |   | | / _ \ 
+ \ V  V /  __/ |_) |.___/ / | _ | || (_) |
+  \_/\_/ \___|_.__/ \____/| |(_)|_| \___/ 
+                         _/ |             
+                        |__/              
+
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;clear]1;clear[3J[H[2J]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;rm -r ~/.web3j]1;rm]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;./web3j.sh]1;./web3j.shDownloading Web3j ...
+Archive:  /home/alexander/.web3j/web3j-4.5.5.zip
+   creating: /home/alexander/.web3j/web3j-4.5.5/
+   creating: /home/alexander/.web3j/web3j-4.5.5/lib/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/web3j-cli-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/codegen-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/contracts-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/hosted-providers-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/core-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/crypto-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-nop-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/javapoet-1.7.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/picocli-3.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/abi-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/tuples-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-unixsocket-0.21.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/logging-interceptor-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okhttp-3.8.1.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rxjava-2.2.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/Java-WebSocket-1.3.8.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-databind-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/slf4j-api-1.7.28.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/rlp-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/utils-4.5.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-enxio-0.19.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-posix-3.0.47.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-ffi-2.1.9.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-constants-0.9.11.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/okio-1.13.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/reactive-streams-1.0.2.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-annotations-2.8.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jackson-core-2.8.5.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/bcprov-jdk15on-1.61.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jffi-1.2.17-native.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-commons-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-analysis-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-util-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-tree-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/asm-5.0.3.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-a64asm-1.0.0.jar  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/lib/jnr-x86asm-1.0.2.jar  
+   creating: /home/alexander/.web3j/web3j-4.5.5/bin/
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j.bat  
+  inflating: /home/alexander/.web3j/web3j-4.5.5/bin/web3j  
+Removing zip file ...
+Web3j path exists in bash_profile
+Web3j path exists in bashrc
+Web3j path exists in zshrc
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;clear]1;clear[3J[H[2J]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;ls --color=tty]1;lsinstaller.sh
+README.md
+test
+web3j
+web3j.sh
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=[?1l>]2;clear]1;clear[3J[H[2J]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=Testing
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=Testing
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=Testing
+]2;alexander@alexander-pc: ~/Documents/dev/web3j-installer]1;..b3j-installer[?1h=
