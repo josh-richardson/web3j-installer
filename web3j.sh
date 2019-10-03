@@ -11,19 +11,43 @@ check_if_installed() {
   fi
 }
 
+completed(){
+  echo "To start using the CLI type web3j"
+  web3j 
+}
+
 set_path() {
+
   if (test -f "${HOME}/.bash_profile" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.bash_profile"); then
     echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.bash_profile
-    echo "Web3j has been added to your bash_profile path variable. Please re-open your shell to use Web3j."
-  fi
+    echo "Web3j has been added to your bash_profile path variable."
+    
+   else 
+    echo "Web3j path exists in bash_profile"
+   fi
   if (test -f "${HOME}/.bashrc" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.bashrc"); then
     echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.bashrc
-    echo "Web3j has been added to your bashrc path variable. Please re-open your shell to use Web3j."
+    echo "Web3j has been added to your bashrc path variable."   
+   
+  else 
+     echo "Web3j path exists in bashrc"
   fi
   if (test -f "${HOME}/.zshrc" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.zshrc"); then
     echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.zshrc
-    echo "Web3j has been added to your zshrc path variable. Please re-open your shell to use Web3j."
+    echo "Web3j has been added to your zshrc path variable."
+   
+  else
+     echo "Web3j path exists in zshrc"
   fi
+  
+  if  [[ $(basename $SHELL) = 'zsh' ]] ; then 
+    zsh
+  fi
+   if  [[ $(basename $SHELL) = 'bash' ]] ; then 
+    bash
+  fi
+
+   
 }
 
 download_web3j() {
@@ -32,10 +56,10 @@ download_web3j() {
  if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip") -eq 302 ]] ; then
     curl -# -L -o ~/.web3j/web3j-${web3j_version}.zip "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip"
     unzip  -o "${local}.web3j/web3j-${web3j_version}.zip" -d "${local}.web3j"
+    echo "Removing zip file ..."
     rm "${local}.web3j/web3j-${web3j_version}.zip"
  else
-  echo "Looks like there was an error while trying to get web3j"
-  
+  echo "Looks like there was an error while trying to download web3j"
   exit 0
  fi
 }
@@ -47,15 +71,14 @@ check_version() {
     echo "Your Web3j version is not up to date."
     get_user_input
   else
-    echo "You already have the latest version of Web3j. Exiting."
+    echo "You have the latest version of Web3j. Exiting."
     exit 0
   fi
 }
 
 get_user_input() {
-  while :; do
-    echo
-    read -p "Would you like to update Web3j ? [y]es | [n]o : " user_input
+
+  while read -p "Would you like to update Web3j ? [y]es | [n]o : " user_input ; do
     case $user_input in
     y)
       echo "Updating Web3j ..."
@@ -64,6 +87,21 @@ get_user_input() {
       ;;
     n)
       echo "Aborting instalation ..."
+      exit 0
+      ;;
+    esac
+  done
+}
+
+add_to_path() {
+  while read -p "Would you like to add Web3j to your local path ? [y]es | [n]o : " user_input ; do
+   case $user_input in
+    y)
+      set_path
+      break
+      ;;
+    n)
+      echo "Web3j was not added to path. Path to binary: ~/web3j/web3j-${web3j_version}/bin/web3j"
       exit 0
       ;;
     esac
@@ -91,11 +129,13 @@ main() {
     check_version
     clean_up
     download_web3j
-    set_path
+    add_to_path
+    completed
   else
     clean_up
     download_web3j
-    set_path
+    add_to_path
+    completed
   fi
 }
 
