@@ -21,5 +21,5 @@ if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://raw.g
  fi
 
 }
-
+clean_up
 download_installer
