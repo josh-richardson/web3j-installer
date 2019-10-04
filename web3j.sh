@@ -79,13 +79,11 @@ main() {
     check_version
     clean_up
     download_web3j
-    add_to_path
-    completed
+
   else
     clean_up
     download_web3j
-    add_to_path
-    completed
+  
   fi
 }
 
