@@ -77,3 +77,4 @@ if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://raw.g
 clean_up
 download_installer
 add_to_path 
+completed
