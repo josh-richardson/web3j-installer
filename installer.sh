@@ -63,9 +63,9 @@ completed() {
 }
 
 download_installer() {
-if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://raw.githubusercontent.com/web3j/web3j-installer/master/web3j.sh") -eq 200 ]] ; then
+if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://raw.githubusercontent.com/AlexandrouR/web3j-installer/master/web3j.sh") -eq 200 ]] ; then
     echo "Downloading install script ..."
-    curl -# -L -o ~/.web3j/web3j.sh "https://raw.githubusercontent.com/web3j/web3j-installer/master/web3j.sh"
+    curl -# -L -o ~/.web3j/web3j.sh "https://raw.githubusercontent.com/AlexandrouR/web3j-installer/master/web3j.sh"
     chmod 777 ~/.web3j/web3j.sh  
     ~/.web3j/web3j.sh < /dev/tty
  else
