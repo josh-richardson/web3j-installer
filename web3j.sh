@@ -10,58 +10,8 @@ check_if_installed() {
     installed_flag=1
   fi
 }
-set_path() {
 
-  if (test -f "${HOME}/.bash_profile" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.bash_profile"); then
-    echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.bash_profile
-    echo "Web3j has been added to your bash_profile path variable."
-    
-   else 
-    echo "Web3j path exists in bash_profile"
-   fi
-  if (test -f "${HOME}/.bashrc" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.bashrc"); then
-    echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.bashrc
-    echo "Web3j has been added to your bashrc path variable."   
-   
-  else 
-     echo "Web3j path exists in bashrc"
-  fi
-  if (test -f "${HOME}/.zshrc" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.zshrc"); then
-    echo "export PATH=\$PATH:~/.web3j/web3j-${web3j_version}/bin" >> ~/.zshrc
-    echo "Web3j has been added to your zshrc path variable."
-   
-  else
-     echo "Web3j path exists in zshrc"
-  fi
-  {
-    echo "export PATH=\${PATH}:~\.web3j/web3j-${web3j_version}/bin"
-  } > ~/.web3j/path-update.sh 
-  chmod 777 ~/.web3j/path-update.sh 
-}
 
-add_to_path() {
-  while read -p "Would you like to add Web3j to your local path ? [y]es | [n]o : " user_input ; do
-   case $user_input in
-    y)
-      set_path
-      break
-      ;;
-    n)
-      echo "Web3j was not added to path. Path to binary: ~/web3j/web3j-${web3j_version}/bin/web3j"
-      exit 0
-      ;;
-    esac
-  done
-}
-
-completed() {
-  echo -e "\e[42m Web3j was succesfully installed \e[0m"
-  echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
-  echo "When you open a new terminal window this will be done automatically." 
-  echo "To see what web3j's CLI can do you can check the documentation bellow."
-  echo -e "\e[92m https://docs.web3j.io/command_line_tools/ \e[0m "
-  echo "To use web3j in your current shell run source \$HOME/.web3j/path-update.sh "
-}
 
 download_web3j() {
   echo "Downloading Web3j ..."
