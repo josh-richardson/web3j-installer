@@ -6,16 +6,10 @@ local=~/
 
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] &>/dev/null; then
-    echo 'Web3j is installed on you system.'
+    echo 'A web3j installation exists on your system.'
     installed_flag=1
   fi
 }
-
-completed() {
-  echo "To start using the CLI type web3j"
-  web3j 
-}
-
 set_path() {
 
   if (test -f "${HOME}/.bash_profile" && ! grep -s --quiet ".web3j/web3j-${web3j_version}" "$HOME/.bash_profile"); then
@@ -39,20 +33,41 @@ set_path() {
   else
      echo "Web3j path exists in zshrc"
   fi
-  
   {
-  echo "export PATH=$PATH:~/.web3j/web3j-${web3j_version}/bin"
-  } > ~/.web3j/source.sh
-  source ~/.web3j/source.sh
+    echo "export PATH=\${PATH}:~\.web3j/web3j-${web3j_version}/bin"
+  } > ~/.web3j/path-update.sh 
+  chmod 777 ~/.web3j/path-update.sh 
+}
 
-   
+add_to_path() {
+  while read -p "Would you like to add Web3j to your local path ? [y]es | [n]o : " user_input ; do
+   case $user_input in
+    y)
+      set_path
+      break
+      ;;
+    n)
+      echo "Web3j was not added to path. Path to binary: ~/web3j/web3j-${web3j_version}/bin/web3j"
+      exit 0
+      ;;
+    esac
+  done
+}
+
+completed() {
+  echo -e "\e[42m Web3j was succesfully installed \e[0m"
+  echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
+  echo "When you open a new terminal window this will be done automatically." 
+  echo "To see what web3j's CLI can do you can check the documentation bellow."
+  echo -e "\e[92m https://docs.web3j.io/command_line_tools/ \e[0m "
+  echo "To use web3j in your current shell run source \$HOME/.web3j/path-update.sh "
 }
 
 download_web3j() {
   echo "Downloading Web3j ..."
   mkdir "${local}.web3j"
  if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip") -eq 302 ]] ; then
-    curl -# -L -o ~/.web3j/web3j-${web3j_version}.zip "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip"
+    curl -# -L -o ~/.web3j/web3j-${web3j_version}.zip "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip" 
     unzip  -o "${local}.web3j/web3j-${web3j_version}.zip" -d "${local}.web3j"
     echo "Removing zip file ..."
     rm "${local}.web3j/web3j-${web3j_version}.zip"
@@ -91,20 +106,7 @@ get_user_input() {
   done
 }
 
-add_to_path() {
-  while read -p "Would you like to add Web3j to your local path ? [y]es | [n]o : " user_input ; do
-   case $user_input in
-    y)
-      set_path
-      break
-      ;;
-    n)
-      echo "Web3j was not added to path. Path to binary: ~/web3j/web3j-${web3j_version}/bin/web3j"
-      exit 0
-      ;;
-    esac
-  done
-}
+
 
 check_if_web3j_homebrew() {
   if (command -v brew && ! (brew info web3j | grep "Not installed") &>/dev/null); then
