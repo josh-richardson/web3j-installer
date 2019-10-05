@@ -3,6 +3,7 @@ jdk: oraclejdk9
 os:
   - linux
   - osx
+  - windows
 
 script:
   - ./test/test_web3j.sh
