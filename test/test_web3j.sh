@@ -2,6 +2,8 @@
 set -e
 JAVA_EXECUTABLE=$(readlink -f $(which java))
 export JAVA_HOME=$(dirname $(dirname $JAVA_EXECUTABLE))
-bash web3j.sh
+echo $JAVA_HOME
+bash installer.sh
+ls
 source ~/.bashrc
 web3j version

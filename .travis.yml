@@ -1,11 +1,8 @@
-language: bash
+jdk: oraclejdk8
 
-services:
-  - docker
-
-before_script:
-  - docker build -t web3j-install-debian -f test/debian/Dockerfile .
-  - docker build -t web3j-install-fedora -f test/fedora/Dockerfile .
+os:
+  - linux
+  - osx
 
 script:
-  - docker run web3j-install-debian:latest && docker run web3j-install-fedora:latest
+  - ./test_web3j.sh
