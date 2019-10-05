@@ -4,7 +4,7 @@ installed_flag=0
 
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] &>/dev/null; then
-    echo 'A web3j installation exists on your system.'
+    printf 'A Web3j installation exists on your system: '
     installed_flag=1
   fi
 }
@@ -12,13 +12,14 @@ check_if_installed() {
 install_web3j() {
   echo "Downloading Web3j ..."
   mkdir "$HOME/.web3j"
-  if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip") -eq 302 ]]; then
-    curl -# -L -o "$HOME/.web3j/web3j-${web3j_version}.zip" "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.zip"
-    unzip -o "$HOME/.web3j/web3j-${web3j_version}.zip" -d "$HOME/.web3j"
+  if [[ $(curl --write-out %{http_code} --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.tar") -eq 302 ]]; then
+    curl -# -L -o "$HOME/.web3j/web3j-${web3j_version}.tar" "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.tar"
+    echo "Installing Web3j..."
+    tar -xf "$HOME/.web3j/web3j-${web3j_version}.tar" -C "$HOME/.web3j"
     echo "export PATH=\$PATH:$HOME/.web3j/web3j-${web3j_version}/bin" >"$HOME/.web3j/source.sh"
     chmod +x "$HOME/.web3j/source.sh"
-    echo "Removing zip file ..."
-    rm "$HOME/.web3j/web3j-${web3j_version}.zip"
+    echo "Removing downloaded archive..."
+    rm "$HOME/.web3j/web3j-${web3j_version}.tar"
   else
     echo "Looks like there was an error while trying to download web3j"
     exit 0
