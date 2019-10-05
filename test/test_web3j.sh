@@ -6,4 +6,5 @@ echo $JAVA_HOME
 bash installer.sh
 ls
 source ~/.bashrc
+echo $PATH
 web3j version
