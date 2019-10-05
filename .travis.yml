@@ -1,4 +1,4 @@
-jdk: oraclejdk8
+jdk: oraclejdk9
 
 os:
   - linux
