@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 if [ -f "C:\\windows\\system32\\drivers\\etc\\hosts" ]; then
-#  choco install jdk8
+  choco install -y jdk8
+  export JAVA_HOME="C:\\Program Files\\Java\\jdk1.8.0_221"
   powershell -executionpolicy bypass .\\installer.ps1
-  ~/.web3j/bin/web3j.bat version
+  chmod +x ~/.web3j/*/bin/web3j.bat
+
+  ~/.web3j/*/bin/web3j.bat version
   exit 0
 fi
 
