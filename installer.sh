@@ -104,7 +104,7 @@ source_web3j() {
   fi
 }
 completed() {
-	printf '\033[32m'
+  printf '\033[32m'
   echo "Web3j was succesfully installed"
   echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
   echo "When you open a new terminal window this will be done automatically." 
