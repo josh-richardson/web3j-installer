@@ -104,12 +104,14 @@ source_web3j() {
   fi
 }
 completed() {
+  printf '\033[32m'
   echo "Web3j was succesfully installed"
   echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
   echo "When you open a new terminal window this will be done automatically." 
   echo "To see what web3j's CLI can do you can check the documentation bellow."
   echo "https://docs.web3j.io/command_line_tools/ "
-  echo "To use web3j in your current shell run source \$HOME/.web3j/source.sh "
+  echo "To use web3j in your current shell run:"
+  echo "source \$HOME/.web3j/source.sh "
   exit 0
 }
 
