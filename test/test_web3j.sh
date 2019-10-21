@@ -10,7 +10,7 @@ if [ -f "C:\\windows\\system32\\drivers\\etc\\hosts" ]; then
   exit 0
 fi
 
-bash installer.sh
+sh installer.sh
 echo "Web3j source script content:"
 cat $HOME/.web3j/source.sh
 echo "Sourcing web3j source script"
