@@ -1,10 +1,10 @@
 # web3j-installer
 Command line installer for Web3j
 
-### How to (UNIX):
+### How to (Linux/macOS):
 In a terminal, run the following command:
 
-`curl -s https://raw.githubusercontent.com/web3j/web3j-installer/master/web3j.sh | bash ; source ~/.web3j/source.sh `
+`curl -L get.web3j.io | sh`
 
 This script will not work if Web3j has been installed using Homebrew on macOS.
 

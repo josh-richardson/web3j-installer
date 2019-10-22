@@ -1,6 +1,26 @@
 #!/bin/sh
 web3j_version="4.5.5"
 installed_flag=0
+
+setup_color() {
+  # Only use colors if connected to a terminal
+  if [ -t 1 ]; then
+    RED=$(printf '\033[31m')
+    GREEN=$(printf '\033[32m')
+    YELLOW=$(printf '\033[33m')
+    BLUE=$(printf '\033[34m')
+    BOLD=$(printf '\033[1m')
+    RESET=$(printf '\033[m')
+  else
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    BOLD=""
+    RESET=""
+  fi
+}
+
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] >/dev/null 2>&1; then
     printf 'A Web3j installation exists on your system: '
@@ -28,7 +48,7 @@ install_web3j() {
 check_version() {
   version_string=$(web3j version | grep Version | awk -F" " '{print $NF}')
   echo "$version_string"
-  if [ "$version_string" = "$web3j_version" ]; then
+  if [ "$version_string" != "$web3j_version" ]; then
     echo "Your Web3j version is not up to date."
     get_user_input
   else
@@ -38,7 +58,7 @@ check_version() {
 }
 
 get_user_input() {
-  while read "Would you like to update Web3j ? [y]es | [n]o : " user_input; do
+  while printf "Would you like to update Web3j ? [y]es | [n]o: " && read user_input; do
     case $user_input in
     y)
       echo "Updating Web3j ..."
@@ -117,18 +137,20 @@ clean_up() {
 }
 
 completed() {
-  printf '\033[32m'
-  echo "Web3j was succesfully installed"
-  echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
-  echo "When you open a new terminal window this will be done automatically."
+  printf '\n'
+  printf "$GREEN" 
+  echo "Web3j was succesfully installed."
+  echo "To use web3j in your current shell run:"
+  echo "source \$HOME/.web3j/source.sh"
+  echo "When you open a new shell this will be performed automatically."
   echo "To see what web3j's CLI can do you can check the documentation bellow."
   echo "https://docs.web3j.io/command_line_tools/ "
-  echo "To use web3j in your current shell run:"
-  echo "source \$HOME/.web3j/source.sh "
+  printf "$RESET" 
   exit 0
 }
 
 main() {
+  setup_color 
   check_if_installed
   if [ $installed_flag -eq 1 ]; then
     check_if_web3j_homebrew
