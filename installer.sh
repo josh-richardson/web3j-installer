@@ -69,7 +69,6 @@ check_version() {
   fi
 }
 
-
 source_web3j() {
   SOURCE_WEB3J="\n[ -s \"$HOME/.web3j/source.sh\" ] && source \"$HOME/.web3j/source.sh\""
   if [ -f "$HOME/.bashrc" ]; then
@@ -124,8 +123,9 @@ source_web3j() {
     fi
   fi
 }
+
 check_if_web3j_homebrew() {
-  if (command -v brew && ! (brew info web3j | grep "Not installed") >/dev/null 2>&1); then
+  if (command -v brew && ! (brew info web3j 2>&1 | grep -e "Not installed\|No available formula") >/dev/null 2>&1); then
     echo "Looks like Web3j is installed with Homebrew. Please use Homebrew to update. Exiting."
     exit 0
   fi
