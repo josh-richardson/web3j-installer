@@ -26,7 +26,7 @@ install_web3j() {
 }
 get_user_input() {
   echo "Would you like to update Web3j ? [y]es | [n]o : "
-  while read -r user_input  ; do
+  while read -r user_input </dev/tty ; do
     case $user_input in
     y)
       echo "Updating Web3j ..."
