@@ -1,26 +1,6 @@
 #!/bin/sh
 web3j_version="4.5.5"
 installed_flag=0
-
-setup_color() {
-  # Only use colors if connected to a terminal
-  if [ -t 1 ]; then
-    RED=$(printf '\033[31m')
-    GREEN=$(printf '\033[32m')
-    YELLOW=$(printf '\033[33m')
-    BLUE=$(printf '\033[34m')
-    BOLD=$(printf '\033[1m')
-    RESET=$(printf '\033[m')
-  else
-    RED=""
-    GREEN=""
-    YELLOW=""
-    BLUE=""
-    BOLD=""
-    RESET=""
-  fi
-}
-
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] >/dev/null 2>&1; then
     printf 'A Web3j installation exists on your system: '
@@ -44,21 +24,9 @@ install_web3j() {
     exit 0
   fi
 }
-
-check_version() {
-  version_string=$(web3j version | grep Version | awk -F" " '{print $NF}')
-  echo "$version_string"
-  if [ "$version_string" != "$web3j_version" ]; then
-    echo "Your Web3j version is not up to date."
-    get_user_input
-  else
-    echo "You have the latest version of Web3j. Exiting."
-    exit 0
-  fi
-}
-
 get_user_input() {
-  while printf "Would you like to update Web3j ? [y]es | [n]o: " && read user_input; do
+  echo "Would you like to update Web3j ? [y]es | [n]o : "
+  while read -r user_input  ; do
     case $user_input in
     y)
       echo "Updating Web3j ..."
@@ -71,6 +39,20 @@ get_user_input() {
     esac
   done
 }
+
+check_version() {
+  version_string=$(web3j version | grep Version | awk -F" " '{print $NF}')  
+  if [ "$version_string" = "$web3j_version" ]; then
+     echo "You have the latest version of Web3j. Exiting."
+    exit 0
+    else
+       echo "Your Web3j version is not up to date."
+    get_user_input
+   fi
+
+}
+
+
 source_web3j() {
   SOURCE_WEB3J="\n[ -s \"$HOME/.web3j/source.sh\" ] && source \"$HOME/.web3j/source.sh\""
   if [ -f "$HOME/.bashrc" ]; then
@@ -82,7 +64,8 @@ source_web3j() {
     else
       echo "Skipped update of ${bash_rc} (source string already present)"
     fi
-  elif [ -f "$HOME/.bash_profile" ]; then
+  fi
+  if [ -f "$HOME/.bash_profile" ]; then
     bash_profile="${HOME}/.bash_profile"
     touch "${bash_profile}"
     if ! grep -qc '.web3j/source.sh' "${bash_profile}"; then
@@ -91,7 +74,8 @@ source_web3j() {
     else
       echo "Skipped update of ${bash_profile} (source string already present)"
     fi
-  elif [ -f "$HOME/.bash_login" ]; then
+  fi
+  if [ -f "$HOME/.bash_login" ]; then
     bash_login="$HOME/.bash_login"
     touch "${bash_login}"
     if ! grep -qc '.web3j/source.sh' "${bash_login}"; then
@@ -100,7 +84,8 @@ source_web3j() {
     else
       echo "Skipped update of ${bash_login} (source string already present)"
     fi
-  elif [ -f "$HOME/.profile" ]; then
+  fi
+  if [ -f "$HOME/.profile" ]; then
     profile="$HOME/.profile"
     touch "${profile}"
     if ! grep -qc '.web3j/source.sh' "${profile}"; then
@@ -137,20 +122,18 @@ clean_up() {
 }
 
 completed() {
-  printf '\n'
-  printf "$GREEN" 
-  echo "Web3j was succesfully installed."
-  echo "To use web3j in your current shell run:"
-  echo "source \$HOME/.web3j/source.sh"
-  echo "When you open a new shell this will be performed automatically."
+  printf '\033[32m'
+  echo "Web3j was succesfully installed"
+  echo "To get started you will need Web3j's bin directory in your PATH enviroment variable."
+  echo "When you open a new terminal window this will be done automatically."
   echo "To see what web3j's CLI can do you can check the documentation bellow."
   echo "https://docs.web3j.io/command_line_tools/ "
-  printf "$RESET" 
+  echo "To use web3j in your current shell run:"
+  echo "source \$HOME/.web3j/source.sh "
   exit 0
 }
 
 main() {
-  setup_color 
   check_if_installed
   if [ $installed_flag -eq 1 ]; then
     check_if_web3j_homebrew
