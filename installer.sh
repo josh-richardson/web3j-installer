@@ -1,5 +1,5 @@
 #!/bin/sh
-web3j_version="4.5.6"
+web3j_version="4.5.7"
 installed_flag=0
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] >/dev/null 2>&1; then
