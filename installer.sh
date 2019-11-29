@@ -1,6 +1,8 @@
 #!/bin/sh
-web3j_version="4.5.7"
+web3j_version="4.5.8"
 installed_flag=0
+installed_version=""
+
 check_if_installed() {
   if [ -x "$(command -v web3j)" ] >/dev/null 2>&1; then
     printf 'A Web3j installation exists on your system: '
@@ -29,7 +31,7 @@ setup_color() {
 
 install_web3j() {
   echo "Downloading Web3j ..."
-  mkdir "$HOME/.web3j"
+  mkdir -p "$HOME/.web3j"
   if [ "$(curl --write-out "%{http_code}" --silent --output /dev/null "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.tar")" -eq 302 ]; then
     curl -# -L -o "$HOME/.web3j/web3j-${web3j_version}.tar" "https://github.com/web3j/web3j-cli/releases/download/v${web3j_version}/web3j-${web3j_version}.tar"
     echo "Installing Web3j..."
@@ -59,8 +61,8 @@ get_user_input() {
 }
 
 check_version() {
-  version_string=$(web3j version | grep Version | awk -F" " '{print $NF}')  
-  if [ "$version_string" = "$web3j_version" ]; then
+  installed_version=$(web3j version | grep Version | awk -F" " '{print $NF}')  
+  if [ "$installed_version" = "$web3j_version" ]; then
       echo "You have the latest version of Web3j. Exiting."
       exit 0
     else
@@ -133,7 +135,8 @@ check_if_web3j_homebrew() {
 
 clean_up() {
   if [ -d "$HOME/.web3j" ]; then
-    rm -r "$HOME/.web3j" >/dev/null 2>&1
+    rm -f "$HOME/.web3j/source.sh"
+    rm -rf "$HOME/.web3j/web3j-$installed_version" >/dev/null 2>&1
     echo "Deleting older installation ..."
   fi
 }
@@ -161,13 +164,10 @@ main() {
     install_web3j
     source_web3j
     completed
-   
   else
-    clean_up
     install_web3j
     source_web3j
-    completed
-    
+    completed    
   fi
 }
 
